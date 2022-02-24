@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/pokedex" routerDirection="backward" text="Voltar"></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      {{ pokemon.name }}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card>
+    <div style="text-align: center">
+      <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/{{ pokemonId }}.svg" height="250px" />
+    </div>
+    <ion-card-header>
+      <ion-card-subtitle>
+        <ion-badge color="dark" *ngFor="let type of pokemon.types" style="margin-right: 2px">{{ type.type.name }} </ion-badge>
+      </ion-card-subtitle>
+      <ion-card-title>{{ pokemon.name | uppercase }}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item *ngFor="let stat of pokemon.stats">
+          {{ stat.stat.name }} <span slot="end">{{ stat.base_stat}}</span>
+        </ion-item>
+      </ion-list>
+
+      <div style="margin-top: 10px">
+        <ion-button expand="block" (click)="capturar()">
+          <ion-icon name="camera"></ion-icon> &nbsp;
+          Capturar</ion-button>
+      </div>
+
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

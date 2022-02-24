@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Pokébola</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content style="--background: transparent !important;">
+
+  <div class="pokemon" *ngIf="!captured">
+    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{ pokemonId }}.png">
+  </div>
+
+  <div class="bottom-button">
+    <ion-button id="button" expand="block" (click)="capturar()">Vai Pokébola</ion-button>
+  </div>
+
+</ion-content>
